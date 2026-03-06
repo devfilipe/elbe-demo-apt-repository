@@ -1,11 +1,11 @@
-# Generated repo artifacts (binary packages)
-repo/*.deb
-
-# Generated repo artifacts (source packages)
-repo/*.dsc
-repo/*.tar.*
-repo/*.buildinfo
-repo/*.changes
+# Generated repo artifacts — match all subdirs (pool layout uses repo/pool/main/<x>/<pkg>/)
+*.deb
+*.dsc
+*.tar.gz
+*.tar.xz
+*.tar.bz2
+*.buildinfo
+*.changes
 
 # Generated APT index files
 repo/Packages
