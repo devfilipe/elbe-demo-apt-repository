@@ -17,8 +17,9 @@ repo/Release.gpg
 repo/InRelease
 repo/repo-key.gpg
 
-# Private GPG key (never commit)
+# GPG keys (generated at runtime, never commit)
 keys/private.gpg
+keys/public.asc
 
 # GPG home used during signing
 .gnupg/
