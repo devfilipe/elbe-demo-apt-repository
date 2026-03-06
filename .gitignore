@@ -1,0 +1,24 @@
+# Generated repo artifacts (binary packages)
+repo/*.deb
+
+# Generated repo artifacts (source packages)
+repo/*.dsc
+repo/*.tar.*
+repo/*.buildinfo
+repo/*.changes
+
+# Generated APT index files
+repo/Packages
+repo/Packages.gz
+repo/Sources
+repo/Sources.gz
+repo/Release
+repo/Release.gpg
+repo/InRelease
+repo/repo-key.gpg
+
+# Private GPG key (never commit)
+keys/private.gpg
+
+# GPG home used during signing
+.gnupg/
