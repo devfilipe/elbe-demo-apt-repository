@@ -1,7 +1,12 @@
 # elbe-demo-apt-repository
 
-Local flat APT repository for the ELBE demo project. Holds custom `.deb`
-packages that are installed into ELBE-built images.
+Local **pool-layout** APT repository for the ELBE demo project. Holds custom
+`.deb` packages that are installed into ELBE-built images.
+
+> **Pool layout** means packages are stored under
+> `repo/pool/main/<first-letter>/<package-name>/` — the standard Debian
+> structure. This is required for `elbe cyclonedx-sbom` (SBOM generation) to
+> resolve package origins correctly.
 
 ## Quick start
 
@@ -38,13 +43,17 @@ elbe-demo-apt-repository/
 ├── keys/              # GPG keys
 │   ├── public.asc     # Public key (versioned)
 │   └── private.gpg    # Private key (gitignored)
-├── repo/              # Flat APT repository (generated)
-│   ├── *.deb
+├── repo/              # Pool-layout APT repository (generated)
+│   ├── pool/
+│   │   └── main/
+│   │       └── <x>/
+│   │           └── <pkg>/
+│   │               └── *.deb
 │   ├── Packages
 │   ├── Packages.gz
 │   ├── Release
-│   ├── Release.gpg
-│   ├── InRelease
+│   ├── Release.gpg    # Only present when GPG keys are configured
+│   ├── InRelease      # Only present when GPG keys are configured
 │   └── repo-key.gpg
 └── README.md
 ```
